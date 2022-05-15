@@ -22,7 +22,7 @@ class CashBox(object):
 
     @storage.getter
     def storage(self):
-        return f"{float(self._storage)}$"
+        return "%.2f$" % float(self._storage)
 
     def putm(self, amount: int):
         self.storage += amount
@@ -31,4 +31,4 @@ class CashBox(object):
         if amount < self.storage:
             self.storage -= amount
         else:
-            print("Ran ou of cash.")
+            print("Ran out of cash.")

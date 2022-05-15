@@ -4,7 +4,7 @@ from Rest_suply import CashBox
 
 class Restaurant:
 
-    def __init__(self, cook: Cook, waiter: Waiter): # *employees
+    def __init__(self, cook: Cook, waiter: Waiter):  # *employees
         self.cash_box = CashBox()
         self.cook = cook
         self.waiter = waiter
@@ -16,10 +16,11 @@ class Restaurant:
 
 class Delivery(Restaurant):
 
-    def __init__(self, deliverer: Waiter):
-        self.deliverer = deliverer
-        self.cash_box = CashBox()
+    def __init__(self, deliverer: Waiter, cook: Cook):
+        super(Delivery, self).__init__(cook, deliverer)
+        self.owns_a_truck = True
 
+    @staticmethod
     def knock_door(self):
         print("Knock, Knock...")  # Here is Johny.
 
@@ -36,4 +37,6 @@ print(restaurant.cash_box.storage)
 
 # Delivery
 deliverer = Waiter("Sam", 24, 4)
-delivery = Delivery(deliverer)
+delivery = Delivery(deliverer, cook1)
+
+print(delivery.cash_box.storage)

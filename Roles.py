@@ -25,7 +25,7 @@ class Waiter(Employee):
         print(f"Your {dish} has been served.")
 
     def bill(self):
-        print("Bring bill.")  # otherwise dish class is needed
+        print("Brings bill.")  # otherwise dish class is needed
         return None
 
 
